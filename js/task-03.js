@@ -12,6 +12,7 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
 // Знаходимо елемент ul.gallery
 const galleryList = document.querySelector(".gallery");
 
