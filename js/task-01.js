@@ -5,7 +5,7 @@ const categoriesList = document.getElementById("categories");
 const categoryItems = categoriesList.querySelectorAll("li.item");
 
 // Виводимо кількість категорій в консоль
-console.log(`Кількість категорій: ${categoryItems.length}`);
+console.log(`Number of categories: ${categoryItems.length}`);
 
 // Для кожного li.item виконуємо наступні дії
 categoryItems.forEach((categoryItem) => {
@@ -16,6 +16,6 @@ categoryItems.forEach((categoryItem) => {
   const subcategories = categoryItem.querySelectorAll("li");
 
   // Виводимо текст заголовку і кількість підкатегорій в консоль
-  console.log(`Категорія: ${categoryTitle.textContent}`);
-  console.log(`Кількість підкатегорій: ${subcategories.length}`);
+  console.log(`Category: ${categoryTitle.textContent}`);
+  console.log(`Elements: ${subcategories.length}`);
 });
