@@ -15,7 +15,6 @@ categoryItems.forEach((categoryItem) => {
   // Знаходимо всі підкатегорії (елементи <li>) в поточному li.item
   const subcategories = categoryItem.querySelectorAll("li");
 
-  // Виводимо текст заголовку і кількість підкатегорій в консоль
   console.log(`Category: ${categoryTitle.textContent}`);
   console.log(`Elements: ${subcategories.length}`);
 });
