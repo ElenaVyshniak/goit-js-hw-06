@@ -1,27 +1,12 @@
-// Знаходимо елементи, які нам потрібні
-const counterValueElement = document.getElementById("value");
-const decrementButton = document.querySelector('[data-action="decrement"]');
-const incrementButton = document.querySelector('[data-action="increment"]');
-
-// Ініціалізуємо змінну counterValue і встановлюємо початкове значення 0
+const buttonDec = document.querySelector(`button[data-action="decrement"]`);
+const buttonInc = document.querySelector(`button[data-action="increment"]`);
+const number = document.querySelector(`#value`);
 let counterValue = 0;
-
-// Функція для оновлення текстового вмісту елементу span
-function updateCounterValue() {
-  counterValueElement.textContent = counterValue;
-}
-
-// Додаємо слухачик кліків для кнопки зменшення
-decrementButton.addEventListener("click", () => {
+buttonDec.addEventListener(`click`, function () {
   counterValue -= 1;
-  updateCounterValue();
+  number.textContent = counterValue;
 });
-
-// Додаємо слухачик кліків для кнопки збільшення
-incrementButton.addEventListener("click", () => {
+buttonInc.addEventListener(`click`, function () {
   counterValue += 1;
-  updateCounterValue();
+  number.textContent = counterValue;
 });
-
-// Оновлюємо інтерфейс з початковим значенням
-updateCounterValue();
