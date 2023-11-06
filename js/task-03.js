@@ -13,19 +13,21 @@ const images = [
   },
 ];
 
-// Знаходимо елемент ul.gallery
-const galleryList = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
-// Створюємо рядок для розмітки галереї
-const galleryMarkup = images
+const galleryEl = images
   .map(
-    (image) => `
+    ({ url, alt }) => `
   <li class="gallery-item">
-    <img src="${image.url}" alt="${image.alt}">
+    <img src="${url}" alt="${alt}" width="300" class="gallery-img"/>
   </li>
 `
   )
   .join("");
 
-// Вставляємо всі елементи галереї однією операцією в DOM
-galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
+gallery.insertAdjacentHTML("beforeend", galleryEl);
+
+gallery.style.listStyleType = "none";
+gallery.style.display = "flex";
+gallery.style.flexDirection = "column";
+gallery.style.gap = "300px";
