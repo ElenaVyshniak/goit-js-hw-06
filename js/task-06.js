@@ -1,15 +1,16 @@
-const inputElement = document.getElementById("validation-input");
-const expectedLength = parseInt(inputElement.getAttribute("data-length"));
+const input = document.querySelector("#validation-input");
 
-// Додаємо слухачика події blur до інпуту
-inputElement.addEventListener("blur", () => {
-  const userInputLength = inputElement.value.length;
+input.addEventListener("blur", () => {
+  const inputLength = input.value.length;
+  const dataLength = input.getAttribute("data-length");
+  const dataValue = parseInt(dataLength);
 
-  inputElement.classList.remove("valid", "invalid");
-
-  if (userInputLength === expectedLength) {
-    inputElement.classList.add("valid");
+  if (inputLength === dataValue) {
+    input.classList.add("valid");
   } else {
-    inputElement.classList.add("invalid");
+    input.classList.add("invalid");
   }
+
+  console.log(inputLength);
+  console.log(dataValue);
 });
